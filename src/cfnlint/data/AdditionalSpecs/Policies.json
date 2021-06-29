@@ -2371,6 +2371,7 @@
       "ARNFormat": "arn:${Partition}:mediaconnect:${Region}:${Account}:<namespace>:<relative-id>:<relative-name>",
       "ARNRegex": "^arn:${Partition}:mediaconnect:.+",
       "Actions": [
+        "AddFlowMediaStreams",
         "AddFlowOutputs",
         "AddFlowSources",
         "AddFlowVpcInterfaces",
@@ -2386,6 +2387,7 @@
         "ListReservations",
         "ListTagsForResource",
         "PurchaseOffering",
+        "RemoveFlowMediaStream",
         "RemoveFlowOutput",
         "RemoveFlowSource",
         "RemoveFlowVpcInterface",
@@ -2396,6 +2398,7 @@
         "UntagResource",
         "UpdateFlow",
         "UpdateFlowEntitlement",
+        "UpdateFlowMediaStream",
         "UpdateFlowOutput",
         "UpdateFlowSource"
       ],
@@ -7358,7 +7361,9 @@
       "HasResource": true,
       "StringPrefix": "codeguru-reviewer",
       "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys"
       ]
     },
     "Amazon Cognito Identity": {
